@@ -1,0 +1,4 @@
+restApi:
+  port: '80'
+  logStyle: 'common'
+logLevel: 'info'

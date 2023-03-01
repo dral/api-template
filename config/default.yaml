@@ -1,0 +1,4 @@
+restApi:
+  port: '3000'
+  logStyle: 'common'
+logLevel: 'info'
