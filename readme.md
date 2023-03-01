@@ -24,18 +24,23 @@
 - [x] Logger
   - [x] Json output
   - [x] Api request log
-  - [ ] Test probe
+  - [ ] Liveness probe
 - [ ] Docker file
   - [x] Incremental changes
   - [x] Test image
   - [ ] Production image excluding dev dependencies
-  - [ ] Private packages 
-- [ ] GitHub Actions
+  - [ ] Private packages
+- [ ] CI/CD - GitHub Actions
   - [ ] Linter
   - [ ] Tests
   - [ ] Build image
   - [ ] Licences audit
-  - [ ] Sonarqube 
+  - [ ] Sonarqube
+  - [ ] Integration env
+  - [ ] Swagger doc
+- [x] API doc
+  - [x] OpenAPI doc
+  - [x] Development server url from config
 - [ ] Helm chart
 - [ ] Server setup
   - [x] `ok` and `not found` middlewares

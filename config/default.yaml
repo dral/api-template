@@ -1,4 +1,5 @@
 restApi:
   port: '3000'
   logStyle: 'common'
+  baseUrl: 'http://localhost'
 logLevel: 'info'
