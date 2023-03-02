@@ -1,8 +1,14 @@
-# Template project
+# API Template project
 
-## Features
+## Project setup
 
-- [x] npm scripts for prod, start, build, clean, watch, test, lint
+- [x] npm scripts for 
+  - [x] prod
+  - [x] start, watch
+  - [x] build, clean
+  - [x] test, test:watch
+  - [x] lint
+  - [x] license, license:report
 - [x] nvm setup for node version
 - [x] Typescript setup
   - [x] Linter
@@ -38,9 +44,6 @@
   - [ ] Sonarqube
   - [ ] Integration env
   - [ ] Swagger doc
-- [x] API doc
-  - [x] OpenAPI doc
-  - [x] Development server url from config
 - [ ] Helm chart
 - [ ] Server setup
   - [x] `ok` and `not found` middlewares
@@ -48,3 +51,7 @@
   - [x] exit on initialization error
   - [ ] health probe
   - [ ] prometheus metrics
+  - [x] license, licenses and license summary endpoints
+  - [x] API doc
+    - [x] OpenAPI doc
+    - [x] Development server url from config
