@@ -14,14 +14,14 @@ WORKDIR /workspace
 # COPY .npmrc-ci .npmrc
 
 ## actually install dependencies (force layer creation on package.json changes)
-COPY package*.json .
+COPY package*.json ./
 RUN npm ci
 
 ## cleanup private npm packages setup
 # RUN rm .npmrc
 
 # copy all necessary (remaining) files and build (use .dockerignore to exclude specific files)
-COPY . .
+COPY . ./
 RUN npm run build
 
 # remove dev-dependencies
