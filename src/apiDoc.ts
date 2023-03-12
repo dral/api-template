@@ -1,6 +1,8 @@
 import swaggerJsdoc from 'swagger-jsdoc';
 import project  from  '../package.json';
 import config from 'config';
+import express from 'express';
+import swaggerUi from 'swagger-ui-express';
 
 const {name : title, version, description} = project;
 const port = config.get<string>('restApi.port');
@@ -33,3 +35,16 @@ export const uiOptions = {
 };
 
 export const openapiSpecification = swaggerJsdoc(options);
+
+const router = express.Router();
+
+router.get('/openAPI', (req, res) => {
+  res.json(openapiSpecification);
+});
+
+router.use('/doc',
+  swaggerUi.serve,
+  swaggerUi.setup(openapiSpecification, uiOptions)
+);
+
+export default router;

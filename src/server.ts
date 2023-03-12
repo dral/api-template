@@ -9,9 +9,6 @@ import { ok } from './ok';
 import {error} from './error';
 const port = config.get('restApi.port');
 const logStyle = config.get<string>('restApi.logStyle');
-import {openapiSpecification, uiOptions} from './apiDoc';
-import swaggerUi from 'swagger-ui-express';
-import license from './licence';
 
 export const setupServer = (...router: express.Router[])=> {
   const server = express();
@@ -26,15 +23,6 @@ export const setupServer = (...router: express.Router[])=> {
   if (router.length > 0) {
     server.use(router);
   }
-  
-  // TODO: set application router here
-  server.use(license);
-
-  // API documentation
-  server.use('/doc',
-    swaggerUi.serve,
-    swaggerUi.setup(openapiSpecification, uiOptions)
-  );
 
   // Base Routes
   server.get('/', ok);

@@ -1,7 +1,7 @@
-import api, { infos, licenceCount } from "./licence";
+import api, { infos, licenceCount } from './licence';
 import project from '../package.json';
 import { setupServer } from './server';
-import request from "supertest";
+import request from 'supertest';
 
 
 describe('licence report', () => {
@@ -27,10 +27,10 @@ describe('licence report', () => {
 
     expect(summary).toHaveProperty(license);
     expect(summary[license]).toContainEqual({
-        name,
-        version,
-        description,
-      });
+      name,
+      version,
+      description,
+    });
   });
 
   it('should get the compiled summary from the info object', async() => {

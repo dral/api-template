@@ -147,4 +147,4 @@ export const licenceCount = (report: checker.ModuleInfos):  Record<string, objec
     }
   });
   return counter;
-}
+};
