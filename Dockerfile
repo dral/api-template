@@ -25,6 +25,6 @@ COPY . ./
 RUN npm run build
 
 # remove dev-dependencies
-# RUN npm prune --omit=dev
+RUN npm prune --omit=dev
 
 CMD npm run prod
