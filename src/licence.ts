@@ -76,7 +76,7 @@ class licenseInfo {
   }
 }
 
-const infos = new licenseInfo();
+export const infos = new licenseInfo();
 
 /**
  * @openapi
@@ -128,7 +128,7 @@ router.get('/licenses/summary', summary);
 
 export default router;
 
-function licenceCount(report: checker.ModuleInfos):  Record<string, object[]> {
+export const licenceCount = (report: checker.ModuleInfos):  Record<string, object[]> => {
   let counter: Record<string, object[]> = { unknown : []};
 
   Object.values(report).forEach(moduleInfo => {
