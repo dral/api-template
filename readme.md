@@ -34,16 +34,17 @@
 - [ ] Docker file
   - [x] Incremental changes
   - [x] Test image
-  - [ ] Production image excluding dev dependencies
+  - [x] Production image excluding dev dependencies
   - [ ] Private packages
-- [ ] CI/CD - GitHub Actions
-  - [ ] Linter
-  - [ ] Tests
-  - [ ] Build image
-  - [ ] Licences audit
+- [x] CI/CD - GitHub Actions
+  - [x] Linter
+  - [x] Tests
+  - [x] Licences audit
   - [ ] Sonarqube
   - [ ] Integration env
   - [ ] Swagger doc
+  - [x] Build image
+  - [x] Publish image to Github packages
 - [ ] Helm chart
 - [ ] Server setup
   - [x] `ok` and `not found` middlewares
