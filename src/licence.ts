@@ -19,7 +19,7 @@ let defaultOptions: checker.InitOpts = {
     licenseFile: false,
     licenseText: false,
     licenseModified: 'no',
-    path: true
+    path: false
   }
 };
 
