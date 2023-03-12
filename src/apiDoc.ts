@@ -7,7 +7,7 @@ import swaggerUi from 'swagger-ui-express';
 const {name : title, version, description} = project;
 const port = config.get<string>('restApi.port');
 const baseUrl = config.get<string>('restApi.baseUrl');
-
+const docOverrides = config.get<object>('openAPI');
 let url = new URL(baseUrl);
 url.port = port;
 
@@ -19,6 +19,7 @@ const options : swaggerJsdoc.Options = {
       description,
       title,
       version,
+      ...docOverrides,
     },
     servers: [
       {
@@ -38,6 +39,15 @@ export const openapiSpecification = swaggerJsdoc(options);
 
 const router = express.Router();
 
+/**
+ * @openapi
+ * /openAPI:
+ *   get:
+ *     description: Get the OpenAPI json description for this API
+ *     responses:
+ *       200:
+ *         description: A json containing the OpenAPI specification
+ */
 router.get('/openAPI', (req, res) => {
   res.json(openapiSpecification);
 });
