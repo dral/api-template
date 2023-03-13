@@ -26,6 +26,7 @@
   "author": "Draltan MARIN <moi@draltan.com>",
   "license": "ISC",
   "devDependencies": {
+    "@docusaurus/eslint-plugin": "^2.3.1",
     "@types/config": "^3.3.0",
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",

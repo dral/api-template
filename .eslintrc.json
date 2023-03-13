@@ -3,7 +3,10 @@
     "es2021": true,
     "node": true
   },
-  "ignorePatterns": ["dist/**/*", "website/**/*"],
+  "ignorePatterns": [
+    "dist/**/*",
+    "website/**/*"
+  ],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended"
