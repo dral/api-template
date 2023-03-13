@@ -42,7 +42,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/dral/api-template/tree/main/packages/website/shared/',
+            'https://github.com/dral/api-template/tree/main/website/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
