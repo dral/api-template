@@ -3,6 +3,7 @@
 
 # Production
 /build
+openapi.json
 
 # Generated files
 .docusaurus

@@ -42,7 +42,8 @@
   - [x] Licences audit
   - [ ] Sonarqube
   - [ ] Integration env
-  - [ ] Swagger doc
+  - [x] Public doc to github pages
+  - [x] OpenAPI doc
   - [x] Build image
   - [x] Publish image to Github packages
 - [ ] Helm chart

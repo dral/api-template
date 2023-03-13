@@ -8,8 +8,23 @@ on:
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
 
 jobs:
+  dumpApiSpec:
+    name: Generate api specs and dump to file
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v3
+          with:
+            node-version: 18
+            cache: npm
+        - name: Install dependencies
+          run: npm ci
+        - name: Generate and dump specs
+          run: npm run dumpApiSpec
+ 
   deploy:
     name: Deploy to GitHub Pages
+    needs: dumpApiSpec
     runs-on: ubuntu-latest
     defaults:
       run:
