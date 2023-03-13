@@ -8,37 +8,30 @@ on:
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
 
 jobs:
-  dumpApiSpec:
-    name: Generate api specs and dump to file
+  deploy:
+    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./website
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: npm
-      - name: Install dependencies
+      - name: Install base project dependencies
+        working-directory: .
         run: npm ci
       - name: Generate and dump specs
+        working-directory: .
         run: npm run dumpApiSpec
- 
-  deploy:
-    name: Deploy to GitHub Pages
-    needs: dumpApiSpec
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./website
-    steps:
-      # - uses: actions/checkout@v3
-      # - uses: actions/setup-node@v3
-      #   with:
-      #     node-version: 18
-      #     cache: npm
-
+  
       - name: Install dependencies
+        working-directory: ./website
         run: npm ci
       - name: Build website
+        working-directory: ./website
         run: npm run build
 
       # Popular action to deploy to GitHub Pages:
