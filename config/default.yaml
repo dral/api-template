@@ -31,3 +31,9 @@ openAPI:
   # externalDocs:
   #   description: Find out more
   #   url: http://example.com
+mongodb:
+  host: mongodb://localhost:27017/default
+  options:
+    useUnifiedTopology: 'true'
+    connectTimeoutMS: 1000
+    serverSelectionTimeoutMS: 5000

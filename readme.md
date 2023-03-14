@@ -30,7 +30,6 @@
 - [x] Logger
   - [x] Json output
   - [x] Api request log
-  - [ ] Liveness probe
 - [ ] Docker file
   - [x] Incremental changes
   - [x] Test image
@@ -51,9 +50,26 @@
   - [x] `ok` and `not found` middlewares
   - [x] error handler for uncatched and silent exceptions
   - [x] exit on initialization error
-  - [ ] health probe
+  - [x] health probe
   - [ ] prometheus metrics
   - [x] license, licenses and license summary endpoints
   - [x] API doc
     - [x] OpenAPI doc
     - [x] Development server url from config
+-[x] Persistency
+  - [x] Mongodb setup
+
+```
+docker network create local
+```
+
+MongoDb
+
+```sh
+docker run \
+  --net local \
+  -d \
+  --name mongodb-dev \
+  -p 27017:27017 \
+  mongo:6
+```

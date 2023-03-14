@@ -7,6 +7,7 @@ import { Server } from 'http';
 import { notFound } from './base/notFound';
 import { ok } from './base/ok';
 import {error} from './base/error';
+import { health } from './base/health';
 const port = config.get('restApi.port');
 const logStyle = config.get<string>('restApi.logStyle');
 
@@ -26,15 +27,18 @@ export const setupServer = (...router: express.Router[])=> {
 
   // Base Routes
   server.get('/', ok);
+  server.get('/health', health);
   server.use(notFound);
   server.use(error);
   return server;
 };
 
+let instance: Server;
+
 const init = (...router: express.Router[] ): Promise<Server> => {
   const server = setupServer(...router);
   return new Promise((accept) =>  {
-    const instance = server
+    instance = server
       .listen(port, () => {
         accept(instance);
       })
@@ -42,6 +46,10 @@ const init = (...router: express.Router[] ): Promise<Server> => {
         throw new Error(`Unable to launch server: Shutting down. ${error}`);
       });
   });
+};
+
+export const isAlive = () => {
+  return (instance !== null && instance.listening);
 };
 
 export default init;
