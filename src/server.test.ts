@@ -1,6 +1,6 @@
 import express from 'express';
 import request from 'supertest';
-import { explode, explodeAfterResponse } from './error';
+import { explode, explodeAfterResponse } from './base/error';
 import init, { setupServer } from './server';
 const server = setupServer();
 // import logger from './logger';

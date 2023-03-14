@@ -1,5 +1,5 @@
 import swaggerJsdoc from 'swagger-jsdoc';
-import project  from  '../package.json';
+import project  from  '../../package.json';
 import config from 'config';
 import express from 'express';
 import swaggerUi from 'swagger-ui-express';

@@ -1,5 +1,5 @@
 import api from './apiDoc';
-import { setupServer } from './server';
+import { setupServer } from '../server';
 import request from 'supertest';
 
 describe('licence api', () => {

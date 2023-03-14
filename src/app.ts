@@ -1,6 +1,6 @@
 import express from 'express';
-import doc from './apiDoc';
-import license from './licence';
+import doc from './base/apiDoc';
+import license from './base/licence';
 
 const app = express.Router();
 

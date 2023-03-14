@@ -1,7 +1,7 @@
 import checker, { ModuleInfo } from 'license-checker';
-import logger from './logger';
+import logger from '../logger';
 import express from 'express';
-import project from '../package.json';
+import project from '../../package.json';
 
 const {name, version} = project;
 

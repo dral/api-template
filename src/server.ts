@@ -4,9 +4,9 @@ import {stream} from './logger';
 import morgan from 'morgan';
 import cors from 'cors';
 import { Server } from 'http';
-import { notFound } from './notFound';
-import { ok } from './ok';
-import {error} from './error';
+import { notFound } from './base/notFound';
+import { ok } from './base/ok';
+import {error} from './base/error';
 const port = config.get('restApi.port');
 const logStyle = config.get<string>('restApi.logStyle');
 

@@ -1,6 +1,6 @@
 import api, { infos, licenceCount } from './licence';
-import project from '../package.json';
-import { setupServer } from './server';
+import project from '../../package.json';
+import { setupServer } from '../server';
 import request from 'supertest';
 
 

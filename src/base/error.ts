@@ -1,5 +1,5 @@
 import express from 'express';
-import logger from './logger';
+import logger from '../logger';
 
 export const error = (error: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
   const { path, method, query } = req;

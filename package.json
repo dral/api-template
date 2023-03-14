@@ -22,7 +22,7 @@
     "lint": "eslint .",
     "license:check": "license-checker --production --excludePrivatePackages --onlyAllow 'MIT;ISC;BSD-3-Clause;Apache-2.0;Python-2.0' --summary",
     "license:report": "license-checker --production --excludePrivatePackages --relativeLicensePath --json --out licenses.json",
-    "dumpApiSpec": "ts-node src/dumpOpenApi.ts"
+    "dumpApiSpec": "ts-node src/base/dumpOpenApi.ts"
   },
   "author": "Draltan MARIN <moi@draltan.com>",
   "license": "ISC",
