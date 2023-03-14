@@ -1,4 +1,4 @@
 restApi:
-  port: '80'
+  port: '8000'
   logStyle: 'common'
 logLevel: 'info'

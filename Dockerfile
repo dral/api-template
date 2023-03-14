@@ -27,4 +27,6 @@ RUN npm run build
 # remove dev-dependencies
 RUN npm prune --omit=dev
 
+# run production server
+ENV NODE_ENV=production
 CMD npm run prod
