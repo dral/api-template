@@ -32,10 +32,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
+    - run: npm run license:check
+    - run: npm run lint
     - run: npm run build --if-present
     - run: npm test
-    - run: npm run lint
-    - run: npm run license:check
 
   build-and-push-image:
     runs-on: ubuntu-latest
