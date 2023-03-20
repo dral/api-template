@@ -41,8 +41,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/dral/api-template/edit/main/website/',
+          editUrl: 'https://github.com/dral/api-template/edit/main/website/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -85,7 +84,7 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'My Site',
+        title: 'api-template',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -125,7 +124,7 @@ const config = {
                 to: '/docs/intro',
               },
             ],
-          }
+          },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Draltan Marin.`,
       },
