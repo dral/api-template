@@ -59,6 +59,8 @@ This will keep a running instance attached to your terminal in order to easily m
 
 - [Github pages setup](https://github.com/dral/api-template/settings/pages)
   - Deploy from a branch `gh-pages` `/(root)`
+- [Github actions permissions](https://github.com/dral/clearance/settings/actions)
+  - Workflow permissions: Read and write
 
 ## Project assets
 
