@@ -16,5 +16,6 @@ describe('db connection', () => {
     const dbHost: string = dbServer.getUri();
     const connection = await initdb(dbHost);
     expect(connection.readyState).toBe(mongoose.ConnectionStates.connected);
+    connection.close();
   });
 });
