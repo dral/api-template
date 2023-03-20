@@ -16,6 +16,14 @@ paths:
       responses:
         '200':
           description: A json containing the OpenAPI specification
+  /health:
+    get:
+      description: Verify server is up
+      responses:
+        '200':
+          description: Returns `ok` status
+        '500':
+          description: Either the db or the server is not working as expected
   /license:
     get:
       description: Get the license of this project
