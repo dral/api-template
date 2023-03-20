@@ -1,20 +1,19 @@
 import express from 'express';
 import config from 'config';
-import {stream} from './logger';
-import morgan from 'morgan';
+import { apiLogger } from './logger';
 import cors from 'cors';
 import { Server } from 'http';
 import { notFound } from './base/notFound';
 import { ok } from './base/ok';
-import {error} from './base/error';
+import { error } from './base/error';
 import { health } from './base/health';
-const port = config.get('restApi.port');
-const logStyle = config.get<string>('restApi.logStyle');
 
-export const setupServer = (...router: express.Router[])=> {
+const port = config.get('restApi.port');
+
+export const setupServer = (...router: express.Router[]) => {
   const server = express();
   server.use(cors());
-  server.use(morgan(logStyle, { stream }));
+  server.use(apiLogger);
 
   // Body parser options
   server.use(express.urlencoded({ extended: true }));
@@ -35,9 +34,9 @@ export const setupServer = (...router: express.Router[])=> {
 
 let instance: Server;
 
-const init = (...router: express.Router[] ): Promise<Server> => {
+const init = (...router: express.Router[]): Promise<Server> => {
   const server = setupServer(...router);
-  return new Promise((accept) =>  {
+  return new Promise((accept) => {
     instance = server
       .listen(port, () => {
         accept(instance);
@@ -49,7 +48,7 @@ const init = (...router: express.Router[] ): Promise<Server> => {
 };
 
 export const isAlive = () => {
-  return (instance !== null && instance.listening);
+  return instance !== null && instance.listening;
 };
 
 export default init;

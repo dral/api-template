@@ -1,39 +1,15 @@
 restApi:
   port: '3000'
-  logStyle: 'common'
   baseUrl: 'http://localhost'
 logLevel: 'info'
 openAPI:
-  # # You application title.
-  # # Uncomment to override package.json contents.
-  # title: Sample Pet Store App
-  # # API version. You can use semantic versioning like 1.0.0, 
-  # # or an arbitrary string like 0.99-beta.
-  # # Uncomment to override package.json contents.
-  # version: 1.0.0 
-  # # API description. Arbitrary text in CommonMark or HTML.
-  # # Uncomment to override package.json contents.
-  # description: This is a sample server for a pet store.
-  # # Link to the page that describes the terms of service.
-  # # Must be in the URL format.
-  # termsOfService: http://example.com/terms/
-  # # Contact information: name, email, URL.
-  # contact:
-  #   name: API Support
-  #   email: support@example.com
-  #   url: http://example.com/support
-  # # Name of the license and a URL to the license description.
   license:
     name: ISC
     url: https://opensource.org/license/isc-license-txt/
-  # # Link to the external documentation (if any).
-  # # Code or documentation generation tools can use description as the text of the link. 
-  # externalDocs:
-  #   description: Find out more
-  #   url: http://example.com
 mongodb:
   host: mongodb://localhost:27017/default
   options:
     useUnifiedTopology: 'true'
     connectTimeoutMS: 1000
     serverSelectionTimeoutMS: 5000
+    keepAlive: true

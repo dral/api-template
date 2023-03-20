@@ -1,5 +1,5 @@
 restApi:
   port: '3500'
-logLevel: 'error'
+logLevel: 'none'
 mongodb:
   host: mongodb://localhost:27017/test

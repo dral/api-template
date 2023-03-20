@@ -1,6 +1,5 @@
 restApi:
   port: '8000'
-  logStyle: 'common'
 logLevel: 'info'
 mongodb:
-  host: mongodb://localhost:27017
+  host: 'to be set'

@@ -1,6 +1,6 @@
 restApi:
   port: 'PORT'
-  logStyle: 'restApi_logStyle'
+  baseUrl: 'baseUrl'
 logLevel: 'logLevel'
 mongodb:
   host: 'mongoDbHost'

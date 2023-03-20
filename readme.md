@@ -1,5 +1,7 @@
 # API Template project
 
+Full documentation [here](https://dral.github.io/api-template/)
+
 ## Project setup
 
 - [x] npm scripts for 
@@ -58,18 +60,3 @@
     - [x] Development server url from config
 -[x] Persistency
   - [x] Mongodb setup
-
-```
-docker network create local
-```
-
-MongoDb
-
-```sh
-docker run \
-  --net local \
-  -d \
-  --name mongodb-dev \
-  -p 27017:27017 \
-  mongo:6
-```
