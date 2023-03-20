@@ -13,8 +13,12 @@ import { isAlive as dbOk } from '../db';
  *         description: Either the db or the server is not working as expected
  */
 export const health = (_: express.Request, res: express.Response) => {
-  if (serverOK() && dbOk()) {
-    return res.sendStatus(200);
+  let server = serverOK();
+  let db = dbOk();
+  if (server && db) {
+    res.status(200);
+  } else {
+    res.status(500);
   }
-  return res.sendStatus(500);
+  return res.json({ server, db });
 };

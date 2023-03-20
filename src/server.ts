@@ -34,11 +34,18 @@ export const setupServer = (...router: express.Router[]) => {
 
 let instance: Server;
 
-const init = (...router: express.Router[]): Promise<Server> => {
-  const server = setupServer(...router);
+const init = (
+  router: express.Router | null,
+  options = { port }
+): Promise<Server> => {
+  let routers = [];
+  if (router) {
+    routers.push(router);
+  }
+  const server = setupServer(...routers);
   return new Promise((accept) => {
     instance = server
-      .listen(port, () => {
+      .listen(options.port, () => {
         accept(instance);
       })
       .on('error', (error) => {
