@@ -27,14 +27,14 @@ export const error = (
 };
 
 export const explode =
-  (message = 'Intentional unhandled error') =>
-  () => {
+  // prettier-ignore
+  (message = 'Intentional unhandled error') => () => {
     throw new Error(message);
   };
 
 export const explodeAfterResponse =
-  (message = 'Intentional unhandled error') =>
-  (_: express.Request, res: express.Response) => {
+  // prettier-ignore
+  (message = 'Intentional unhandled error') => (_: express.Request, res: express.Response) => {
     res.sendStatus(200);
     throw new Error(message);
   };
